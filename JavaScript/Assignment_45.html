@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+</head>
+<body style="background-color: aquamarine; color: brown;">
+<div class="container">
+    
+    <h1>Simple Calculator</h1>
+    <form id="calculatorForm">
+        <label for="num1">Enter first number:</label>
+        <input type="number" id="num1" required>
+        <br><br>
+        <label for="operator">Select operator:</label>
+        <select id="operator" required>
+            <option value="">Choose operator</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value=""></option>
+            <option value="/">/</option>
+        </select>
+        <br><br>
+        <label for="num2">Enter second number:</label>
+        <input type="number" id="num2" required>
+        <br><br>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="result"></div>
+</div>
+
+<script>
+    let form = document.getElementById("calculatorForm");
+    let num1Input = document.getElementById("num1");
+    let num2Input = document.getElementById("num2");
+    let operatorSelect = document.getElementById("operator");
+    let resultDiv = document.getElementById("result");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        let num1 = parseFloat(num1Input.value);
+        let num2 = parseFloat(num2Input.value);
+        let operator = operatorSelect.value;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            resultDiv.textContent = "Please enter valid numbers.";
+            return;
+        }
+
+        if (operator === "/" && num2 === 0) {
+            resultDiv.textContent = "Division by zero is not allowed.";
+            return;
+        }
+
+        let result;
+        switch (operator) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+            result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num1 / num2;
+                break;
+            default:
+                resultDiv.textContent = "Please select a valid operator.";
+                return;
+        }
+
+        resultDiv.textContent = "Result: " + result;
+    });
+</script>
+</body>
+</html>

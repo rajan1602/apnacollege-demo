@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = ["R", "A", "J", "A", "N"];
+        let arr2 = ['P', 'A', 'L'];
+
+        document.write(arr1 + "<br>");
+        document.write(arr2 + "<br>");
+
+        arr1.pop();
+        document.write(arr1 + " " + arr1.length + "<br>");
+
+        arr1.push("T");
+        document.write(arr1 + " " + arr1.length + "<br>");
+
+        var arr3 = ["Rajan", "Paul", "Singh"];
+        arr3.sort();
+        document.write(arr3 + "<br>")
+
+        var arr4 = ["Rajan", "Paul", "Singh"];
+        arr3.reverse();
+        document.write(arr4 + "<br>")
+
+        var arr5 = ["R", "A", "J", "A", "N"];
+        var R = arr5.indexOf("J");
+        document.write(R + "<br>");
+
+        r = arr1.indexOf("A", 2);
+        document.write(r + "<br>");
+
+        r = arr1.lastIndexOf("A", 2);
+        document.write(r + "<br>");
+
+        document.write(arr2 + "<br>");
+        arr2.unshift("RAJAN");
+        document.write(arr2 + "<br>");
+
+        var R1 = arr1.slice(2, 4);
+        document.write(R1 + "<br>");
+
+        arr1.splice(3, 0, "I");
+        document.write(arr1 + "<br>");
+
+        arr1.splice(3, 1);
+        document.write(arr1 + "<br>");
+
+        var a = [100,99,11,79,179]
+        a.sort()
+        document.write(a)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="pattern 1" onclick="loop1()">
+    <input type="button" value="pattern 2" onclick="loop2()">
+    <input type="button" value="pattern 3" onclick="loop3()">
+    <p id="ans"></p>
+    <script>
+        let ans = document.getElementById("ans");
+        let result="";
+        function loop1(){
+            ans.innerHTML=""
+            result="";
+            for(let i=0;i<4;i++){
+                for(let j=0;j<i+1;j++){
+                    result+="* "
+                }
+                result+= "<br>"
+            }
+            ans.innerHTML = result
+        }
+        function loop2(){
+            ans.innerHTML=""
+            result="";
+            for(let i=0;i<4;i++){
+                
+                for(let k=0;k<4-i-1;k++){
+                    result+="&nbsp; &nbsp;"
+                }
+                for(let j=0;j<2*(i)+1;j++){
+                    result+="* "
+                }
+                result+= "<br>"
+            }
+            ans.innerHTML = result
+        }
+        function loop3(){
+            ans.innerHTML=""
+            result="";
+            for(let i=0;i<4;i++){
+                for(let j=0;j<i+1;j++){
+                    result+="* "
+                }
+                result+= "<br>"
+            }
+            for(let i=0;i<3;i++){
+                for(let j=i;j<3;j++){
+                    result+="* "
+                }
+                result+= "<br>"
+            }
+            ans.innerHTML = result
+        }
+    </script>
+</body>
+
+</html>

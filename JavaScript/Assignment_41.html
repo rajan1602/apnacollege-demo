@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        var student = {
+            name:"Rajan Pal",
+            section:"2B",
+            branch:"CSE-DS",
+            year: 2
+        }
+        document.write(student.name);
+        document.write(student.year);
+        var emp = {
+            id:[101,102,103,104,105],
+            Name:["Rajan","Viek","Harshit","Kaishav","Payal"]
+        }
+        for(var l = 0;l<=4;l++){
+            document.write(emp.id[l]+" "+emp.Name[0]);
+            document.write('<br>');
+        }
+        var emp = {
+            salary:function () {
+               document.write("3,00,000") 
+            }
+        }
+    </script>
+
+    <input type="button"
+    onclick="emp.salary()"
+    value="salary">
+</body>
+</html>

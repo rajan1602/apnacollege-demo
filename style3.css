@@ -1,0 +1,57 @@
+.container{
+    border: 0px solid red;
+}
+.pink{background-color: pink;}
+.cyan{background-color: cyan;}
+/* .id1{color: white;} */
+#banner{
+    background-image: url('blur.jpg');
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+#banner h2{
+    background-color: rgba(255, 255, 255,0.7);
+    margin-bottom: 0;
+}
+#banner p{
+    background-color: rgba(255, 0, 208, 0.9);
+    margin-top: 0;
+    /* font-size: 15px; */
+    /* color: white; */
+}
+.col{
+    text-align: center;
+    padding: 50px;
+
+}
+.row i{
+    text-align: center;
+
+}
+.third{
+    text-align: center;
+}
+i.fa-solid{
+    font-size: 60px;
+    color: brown;
+    display:flex;
+    align-items: center;
+}
+.middle{
+    text-align: center;
+}
+.section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.section h2::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: brown;
+    margin: auto;
+}
+.box{
+    background-image: url(blur.jpg);
+}

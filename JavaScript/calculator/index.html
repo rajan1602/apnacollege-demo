@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    #calculator {
+    width: 200px;
+    margin: 0 auto;
+}
+
+#display {
+    width: 100%;
+    height: 50px;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    float: left;
+}
+
+.operator {
+    background-color: #f0f0f0;
+}
+</style>
+<body>
+    <div id="calculator">
+        <input type="text" id="display" disabled>
+        <div id="buttons">
+            <button class="btn" value="7">7</button>
+            <button class="btn" value="8">8</button>
+            <button class="btn" value="9">9</button>
+            <button class="btn operator" value="/">/</button>
+            <button class="btn" value="4">4</button>
+            <button class="btn" value="5">5</button>
+            <button class="btn" value="6">6</button>
+            <button class="btn operator" value="*">*</button>
+            <button class="btn" value="1">1</button>
+            <button class="btn" value="2">2</button>
+            <button class="btn" value="3">3</button>
+            <button class="btn operator" value="-">-</button>
+            <button class="btn" value="0">0</button>
+            <button class="btn" id="clear">C</button>
+            <button class="btn" id="equals">=</button>
+            <button class="btn operator" value="+">+</button>
+        </div>
+    </div>
+    <!-- <script>
+        const display = document.getElementById('display');
+const buttons = Array.from(document.getElementsByClassName('btn'));
+let firstOperand = null;
+let secondOperand = null;
+let currentOperator = null;
+
+buttons.map( button => {
+    button.addEventListener('click', (e) => {
+        const buttonText = e.target.innerText;
+        
+        if (buttonText === 'C') {
+            clear();
+            return;
+        }
+
+        if (buttonText === '=') {
+            calculate();
+            return;
+        }
+
+        if (buttonText === '+' || buttonText === '-' || buttonText === '*' || buttonText === '/') {
+            setOperator(buttonText);
+            return;
+        }
+
+        if (firstOperand === null) {
+            firstOperand = buttonText;
+        } else {
+            secondOperand = buttonText;
+        }
+
+        display.value = firstOperand + buttonText;
+    });
+});
+
+function setOperator(operator) {
+    currentOperator = operator;
+    firstOperand = parseFloat(firstOperand);
+    secondOperand = null;
+}
+
+function calculate() {
+    if (currentOperator === null || secondOperand === null) {
+        return;
+    }
+
+    let computation;
+    const firstNum = firstOperand;
+    const secondNum = secondOperand;
+
+    switch (currentOperator) {
+        case '+':
+            computation = firstNum + secondNum;
+            break;
+        case '-':
+            computation = firstNum - secondNum;
+            break;
+        case '*':
+            computation = firstNum * secondNum;
+            break;
+        case '/':
+            if (secondNum === 0) {
+                alert("Cannot divide by zero");
+                return;
+            }
+            computation = firstNum / secondNum;
+            break;
+    }
+
+    display.value = computation;
+    firstOperand = computation;
+    secondOperand = null;
+    currentOperator = null;
+}
+
+function clear() {
+    firstOperand = null;
+    secondOperand = null;
+    currentOperator = null;
+    display.value = '';
+}
+    </script> -->
+</body>
+</html>
