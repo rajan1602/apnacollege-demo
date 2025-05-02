@@ -36,8 +36,18 @@ def recommend(movie):
 st.header('Movie Recommender System')
 
 # Load the models and movies data
-movies = pickle.load(open('model/movie_list.pkl','rb'))
-similarity = pickle.load(open('model/similarity.pkl','rb'))
+import pickle
+
+# Path to your persistent storage
+movie_list_path = '/mnt/data/movie_list.pkl'
+similarity_path = '/mnt/data/similarity.pkl'
+
+with open(movie_list_path, 'rb') as file:
+    movies = pickle.load(file)
+
+with open(similarity_path, 'rb') as file:
+    similarity = pickle.load(file)
+
 
 movie_list = movies['title'].values
 
