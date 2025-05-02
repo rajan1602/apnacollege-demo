@@ -2,6 +2,25 @@ import pickle
 import streamlit as st
 import requests
 
+
+import gzip
+import numpy as np
+
+# Load the machine learning model
+with open('similarity.pkl', 'rb') as f:
+    model = pickle.load(f)
+
+# Reduce the precision of numerical values
+model.weights = np.around(model.weights, decimals=4)
+
+# Remove unnecessary data
+del model.dataset
+
+# Compress the pickle file
+with gzip.open('similarity.pkl.gz', 'wb') as f:
+    pickle.dump(model, f)
+
+
 # Function to fetch poster using movie_id
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key=ID".format(movie_id)
