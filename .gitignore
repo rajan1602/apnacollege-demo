@@ -1,5 +1,6 @@
 movie_recommendation_model.pkl
-similarity_scores.pkl       
+similarity_scores.pkl   
+movie_list.pkl
 tmdb_5000_movies.csv
 tmdb_5000_credits.csv
 model
