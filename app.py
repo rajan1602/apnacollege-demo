@@ -3,23 +3,6 @@ import streamlit as st
 import requests
 
 
-import gzip
-import numpy as np
-
-# Load the machine learning model
-with open('similarity.pkl', 'rb') as f:
-    model = pickle.load(f)
-
-# Reduce the precision of numerical values
-model.weights = np.around(model.weights, decimals=4)
-
-# Remove unnecessary data
-del model.dataset
-
-# Compress the pickle file
-with gzip.open('similarity.pkl.gz', 'wb') as f:
-    pickle.dump(model, f)
-
 
 # Function to fetch poster using movie_id
 def fetch_poster(movie_id):
@@ -53,8 +36,18 @@ def recommend(movie):
 st.header('Movie Recommender System')
 
 # Load the models and movies data
-movies = pickle.load(open('model/movie_list.pkl','rb'))
-similarity = pickle.load(open('model/similarity.pkl','rb'))
+import pickle
+
+# Path to your persistent storage
+movie_list_path = '/mnt/data/movie_list.pkl'
+similarity_path = '/mnt/data/similarity.pkl'
+
+with open(movie_list_path, 'rb') as file:
+    movies = pickle.load(file)
+
+with open(similarity_path, 'rb') as file:
+    similarity = pickle.load(file)
+
 
 movie_list = movies['title'].values
 
