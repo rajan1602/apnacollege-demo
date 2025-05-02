@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Mac and Linux system files
+.DS_Store
+Thumbs.db
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# Cache or temp files
+*.tmp
+
+# If you're using Streamlit's secrets file
+.streamlit/secrets.toml
